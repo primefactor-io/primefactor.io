@@ -1,3 +1,6 @@
+_site
+_cache
+
 .env*
 !.envrc
 !.env.example
