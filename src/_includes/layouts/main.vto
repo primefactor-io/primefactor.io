@@ -1,0 +1,19 @@
+---
+title: Default Main Title
+language: en
+---
+
+<!doctype html>
+<html lang="{{ language }}">
+  <head>
+    <meta charset="utf-8" />
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    {{ comp.header() }}
+    <main>
+      {{ content }}
+    </main>
+    {{ comp.footer() }}
+  </body>
+</html>
