@@ -3,6 +3,8 @@ export const domain = "https://example.com";
 export const title = "My Website Title";
 export const description = "My Website Description.";
 
+export const openGraphLayout = "layouts/satori.tsx";
+
 export const metas = {
   lang: "en",
   site: "=name",

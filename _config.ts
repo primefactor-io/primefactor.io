@@ -10,6 +10,7 @@ import jsonLd from "lume/plugins/json_ld.ts";
 import sitemap from "lume/plugins/sitemap.ts";
 import postcss from "lume/plugins/postcss.ts";
 import favicon from "lume/plugins/favicon.ts";
+import ogImages from "lume/plugins/og_images.ts";
 import modifyUrls from "lume/plugins/modify_urls.ts";
 import tailwindcss from "lume/plugins/tailwindcss.ts";
 
@@ -23,7 +24,8 @@ const site = lume({ src: "./src", location: new URL(domain) })
   .use(sitemap({
     query: "type=page isRedirect!=true",
   }))
-  .use(metas())
+  .use(ogImages())
+  .use(metas()) // Note: The Metas plugin needs to be added after the OG Images plugin.
   .use(jsonLd())
   .use(tailwindcss())
   .use(postcss()) // Note: The PostCSS plugin needs to be added after the Tailwind CSS plugin.
