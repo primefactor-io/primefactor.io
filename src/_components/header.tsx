@@ -1,7 +1,7 @@
-export default function ({ comp }: Lume.Data) {
+export default function ({ name, comp }: Lume.Data) {
   return (
     <header>
-      <a href="/">[Name]</a>
+      <a href="/">{name}</a>
       <comp.navigation />
     </header>
   );
