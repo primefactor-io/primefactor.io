@@ -11,6 +11,7 @@ import sitemap from "lume/plugins/sitemap.ts";
 import postcss from "lume/plugins/postcss.ts";
 import favicon from "lume/plugins/favicon.ts";
 import ogImages from "lume/plugins/og_images.ts";
+import checkUrls from "lume/plugins/check_urls.ts";
 import modifyUrls from "lume/plugins/modify_urls.ts";
 import tailwindcss from "lume/plugins/tailwindcss.ts";
 
@@ -38,6 +39,7 @@ const site = lume({ src: "./src", location: new URL(domain) })
       }
       return url;
     },
-  }));
+  }))
+  .use(checkUrls());
 
 export default site;
