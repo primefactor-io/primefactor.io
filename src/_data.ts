@@ -12,3 +12,14 @@ export const metas = {
   fediverse: "@jdoe@example.com",
   generator: true,
 };
+
+export const jsonLd = {
+  "@type": "WebSite",
+  url: "/",
+  name: "=title",
+  description: "=description",
+  author: {
+    "@type": "Person",
+    name: "John Doe",
+  },
+};
