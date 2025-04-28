@@ -1,0 +1,12 @@
+export const title = "Index Page";
+export const url = "/";
+
+export default function () {
+  return (
+    <>
+      <p>Index Page Body.</p>
+      <a href="/about/">Internal Link</a>
+      <a href="https://example.com">External Link</a>
+    </>
+  );
+}

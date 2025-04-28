@@ -1,9 +1,11 @@
 import lume from "lume/mod.ts";
 import { Data, Page } from "lume/core/file.ts";
 
+import jsx from "lume/plugins/jsx.ts";
 import modifyUrls from "lume/plugins/modify_urls.ts";
 
 const site = lume({ src: "./src" })
+  .use(jsx())
   .use(modifyUrls({
     extensions: [".html"],
     fn: (url: string, page: Page<Data>) => {
