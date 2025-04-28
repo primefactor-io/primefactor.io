@@ -1,4 +1,4 @@
-export const title = "Index Page";
+export const title = null;
 export const description = "Index Page Description";
 export const url = "/";
 export const navigation = "Home";

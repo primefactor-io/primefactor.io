@@ -3,7 +3,7 @@ export const description = "Default Main Description";
 export const language = "en";
 
 export default function (
-  { title, language, url, domain, children, comp }: Lume.Data,
+  { name, title, language, url, domain, children, comp }: Lume.Data,
 ) {
   return (
     <html lang={language}>
@@ -12,7 +12,7 @@ export default function (
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href={String(new URL(url, domain))} />
         <link rel="stylesheet" type="text/css" href="/styles.css" />
-        <title>{title}</title>
+        <title>{title ? `${title} - ${name}` : name}</title>
       </head>
       <body>
         <comp.Header />
