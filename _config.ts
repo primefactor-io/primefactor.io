@@ -19,7 +19,7 @@ const site = lume({ src: "./src", location: new URL(domain) })
     input: "/public/favicon.png",
   }))
   .use(sitemap({
-    query: "category=page isRedirect!=true",
+    query: "type=page isRedirect!=true",
   }))
   .use(tailwindcss())
   .use(postcss()) // Note: The PostCSS plugin needs to be added after the Tailwind CSS plugin.

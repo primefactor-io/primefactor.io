@@ -1,5 +1,5 @@
 export default function ({ nav }: Lume.Data) {
-  const items = nav.menu("/", "category=page").children;
+  const items = nav.menu("/", "type=page").children;
 
   return (
     <>
