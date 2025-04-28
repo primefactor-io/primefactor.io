@@ -5,6 +5,7 @@ import { Data, Page } from "lume/core/file.ts";
 import jsx from "lume/plugins/jsx.ts";
 import nav from "lume/plugins/nav.ts";
 import robots from "lume/plugins/robots.ts";
+import sitemap from "lume/plugins/sitemap.ts";
 import postcss from "lume/plugins/postcss.ts";
 import favicon from "lume/plugins/favicon.ts";
 import modifyUrls from "lume/plugins/modify_urls.ts";
@@ -16,6 +17,9 @@ const site = lume({ src: "./src", location: new URL(domain) })
   .use(robots())
   .use(favicon({
     input: "/public/favicon.png",
+  }))
+  .use(sitemap({
+    query: "category=page isRedirect!=true",
   }))
   .use(tailwindcss())
   .use(postcss()) // Note: The PostCSS plugin needs to be added after the Tailwind CSS plugin.
