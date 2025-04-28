@@ -1,5 +1,6 @@
 export const title = "Index Page";
 export const url = "/";
+export const navigation = "Home";
 
 export default function () {
   return (

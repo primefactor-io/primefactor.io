@@ -1,11 +1,19 @@
-export default function () {
+export default function ({ nav }: Lume.Data) {
+  const items = nav.menu("/", "category=page").children;
+
   return (
-    <nav>
-      <ul>
-        <li>
-          <a href="/about/">About</a>
-        </li>
-      </ul>
-    </nav>
+    <>
+      {items && items.length > 0 && (
+        <nav>
+          <ul>
+            {items.map((item) => (
+              <li key={item.data.url}>
+                <a href={item.data.url}>{item.data.navigation}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
+    </>
   );
 }
