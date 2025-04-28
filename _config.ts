@@ -4,6 +4,7 @@ import { Data, Page } from "lume/core/file.ts";
 
 import jsx from "lume/plugins/jsx.ts";
 import nav from "lume/plugins/nav.ts";
+import metas from "lume/plugins/metas.ts";
 import robots from "lume/plugins/robots.ts";
 import sitemap from "lume/plugins/sitemap.ts";
 import postcss from "lume/plugins/postcss.ts";
@@ -21,6 +22,7 @@ const site = lume({ src: "./src", location: new URL(domain) })
   .use(sitemap({
     query: "type=page isRedirect!=true",
   }))
+  .use(metas())
   .use(tailwindcss())
   .use(postcss()) // Note: The PostCSS plugin needs to be added after the Tailwind CSS plugin.
   .use(modifyUrls({

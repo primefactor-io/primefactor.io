@@ -1,2 +1,5 @@
 layout: layouts/page.tsx
 type: page
+metas:
+  title: =title
+  description: =description

@@ -1,4 +1,5 @@
 export const title = "Default Page Title";
+export const description = "Default Page Description";
 export const language = "en";
 export const layout = "layouts/main.tsx";
 

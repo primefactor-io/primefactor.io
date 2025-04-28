@@ -1,4 +1,5 @@
 export const title = "Default Main Title";
+export const description = "Default Main Description";
 export const language = "en";
 
 export default function ({ title, language, children, comp }: Lume.Data) {
