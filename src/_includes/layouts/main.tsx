@@ -7,6 +7,7 @@ export default function ({ title, language, children, comp }: Lume.Data) {
     <html lang={language}>
       <head>
         <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" type="text/css" href="/styles.css" />
         <title>{title}</title>
       </head>
