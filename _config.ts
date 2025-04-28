@@ -14,6 +14,7 @@ import ogImages from "lume/plugins/og_images.ts";
 import checkUrls from "lume/plugins/check_urls.ts";
 import modifyUrls from "lume/plugins/modify_urls.ts";
 import tailwindcss from "lume/plugins/tailwindcss.ts";
+import lightningCss from "lume/plugins/lightningcss.ts";
 
 const site = lume({ src: "./src", location: new URL(domain) })
   .use(jsx())
@@ -40,6 +41,7 @@ const site = lume({ src: "./src", location: new URL(domain) })
       return url;
     },
   }))
+  .use(lightningCss())
   .use(checkUrls());
 
 export default site;
