@@ -1,4 +1,5 @@
 import lume from "lume/mod.ts";
+import { domain } from "./src/_data.ts";
 import { Data, Page } from "lume/core/file.ts";
 
 import jsx from "lume/plugins/jsx.ts";
@@ -9,7 +10,7 @@ import favicon from "lume/plugins/favicon.ts";
 import modifyUrls from "lume/plugins/modify_urls.ts";
 import tailwindcss from "lume/plugins/tailwindcss.ts";
 
-const site = lume({ src: "./src" })
+const site = lume({ src: "./src", location: new URL(domain) })
   .use(jsx())
   .use(nav())
   .use(robots())
