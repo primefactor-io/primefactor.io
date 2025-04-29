@@ -5,9 +5,12 @@ export default function ({ nav }: Lume.Data) {
     <>
       {items && items.length > 0 && (
         <nav>
-          <ul>
+          <ul className="flex space-x-4">
             {items.map((item) => (
-              <li key={item.data.url}>
+              <li
+                key={item.data.url}
+                className="hover:text-indigo-400 transition-colors duration-200"
+              >
                 <a href={item.data.url}>{item.data.navigation}</a>
               </li>
             ))}

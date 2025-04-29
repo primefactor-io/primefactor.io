@@ -29,7 +29,22 @@ const site = lume({ src: "./src", location: new URL(domain) })
   .use(ogImages())
   .use(metas()) // Note: The Metas plugin needs to be added after the OG Images plugin.
   .use(jsonLd())
-  .use(tailwindcss())
+  .use(tailwindcss({
+    options: {
+      theme: {
+        extend: {
+          animation: {
+            "gradient": "gradient 8s linear infinite",
+          },
+          keyframes: {
+            "gradient": {
+              to: { "background-position": "200% center" },
+            },
+          },
+        },
+      },
+    },
+  }))
   .use(postcss()) // Note: The PostCSS plugin needs to be added after the Tailwind CSS plugin.
   .use(modifyUrls({
     extensions: [".html"],

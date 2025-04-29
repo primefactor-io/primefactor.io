@@ -14,12 +14,14 @@ export default function (
         <link rel="stylesheet" type="text/css" href="/styles.css" />
         <title>{title ? `${title} - ${name}` : name}</title>
       </head>
-      <body>
-        <comp.Header />
-        <main>
+      <body className="text-white bg-slate-900 antialiased overflow-hidden">
+        <main className="w-full max-w-5xl mx-auto px-4 py-6">
+          <comp.Header />
           {children}
         </main>
-        <comp.Footer />
+        <div className="absolute text-slate-500 text-xs w-full bottom-0 text-center p-6">
+          <comp.Footer />
+        </div>
       </body>
     </html>
   );
