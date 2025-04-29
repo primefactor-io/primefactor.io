@@ -16,7 +16,7 @@ export default function (
       </head>
       <body className="text-white bg-slate-900 antialiased overflow-hidden">
         <main className="w-full max-w-5xl mx-auto px-4 py-6">
-          <comp.Header />
+          {url !== "/" && <comp.Header />}
           {children}
         </main>
         <div className="absolute text-slate-500 text-xs w-full bottom-0 text-center p-6">
