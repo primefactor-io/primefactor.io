@@ -1,6 +1,5 @@
 // deno-lint-ignore-file no-explicit-any
 
-export const title = null;
 export const url = "/";
 export const navigation = "Home";
 
