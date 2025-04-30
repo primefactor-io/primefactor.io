@@ -1,6 +1,6 @@
 export const name = "Primefactor";
 export const domain = "https://primefactor.io";
-export const title = "Cryptography R&D Lab";
+export const title = "Cryptography Research and Development Lab";
 export const description =
   "Cryptography Research and Development Lab to explore what's possible tomorrow today.";
 
