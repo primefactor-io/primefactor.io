@@ -1,0 +1,36 @@
+name: Deploy
+
+on:
+  push:
+  workflow_dispatch:
+    inputs:
+      branch:
+        type: choice
+        description: Cloudflare Pages Branch
+        options:
+          - preview
+          - production
+        default: preview
+        required: true
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Setup Deno
+        uses: denoland/setup-deno@v2
+      - name: Build
+        run: deno task build
+      - name: Deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          command: pages deploy _site --commit-dirty=true --branch=${{ github.event.inputs.branch || 'production' }} --project-name=${{ vars.CLOUDFLARE_PROJECT_NAME }}
