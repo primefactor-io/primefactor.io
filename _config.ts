@@ -57,6 +57,8 @@ const site = lume({ src: "./src", location: new URL(domain) })
     },
   }))
   .use(lightningCss())
-  .use(checkUrls());
+  .use(checkUrls())
+  // TODO: Remove once `satori.tsx` is updated.
+  .copy("public/og-image.png", "index.png");
 
 export default site;
