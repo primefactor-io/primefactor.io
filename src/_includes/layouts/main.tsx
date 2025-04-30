@@ -17,7 +17,7 @@ export default function (
         <title>{title ? `${title} - ${name}` : name}</title>
       </head>
       <body className="text-white bg-slate-900 antialiased">
-        <main className="flex flex-col max-w-5xl min-h-screen mx-auto p-4">
+        <main className="flex flex-col max-w-5xl min-h-dvh mx-auto p-4">
           {!isIndexPage && <comp.Header />}
           <div
             className={`grow ${
