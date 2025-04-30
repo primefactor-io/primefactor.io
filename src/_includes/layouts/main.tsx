@@ -5,6 +5,8 @@ export const language = "en";
 export default function (
   { name, title, language, url, domain, children, comp }: Lume.Data,
 ) {
+  const isIndexPage = url === "/";
+
   return (
     <html lang={language}>
       <head>
@@ -14,14 +16,20 @@ export default function (
         <link rel="stylesheet" type="text/css" href="/styles.css" />
         <title>{title ? `${title} - ${name}` : name}</title>
       </head>
-      <body className="text-white bg-slate-900 antialiased overflow-hidden">
-        <main className="w-full max-w-5xl mx-auto px-4 py-6">
-          {url !== "/" && <comp.Header />}
-          {children}
+      <body className="text-white bg-slate-900 antialiased">
+        <main className="flex flex-col max-w-5xl min-h-screen mx-auto p-4">
+          {!isIndexPage && <comp.Header />}
+          <div
+            className={`grow ${
+              isIndexPage ? "content-center text-center" : ""
+            }`}
+          >
+            {children}
+          </div>
+          <div className="text-slate-500 text-xs text-center">
+            <comp.Footer />
+          </div>
         </main>
-        <div className="absolute text-slate-500 text-xs w-full bottom-0 text-center p-6">
-          <comp.Footer />
-        </div>
       </body>
     </html>
   );

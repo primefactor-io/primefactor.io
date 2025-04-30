@@ -8,7 +8,7 @@ export default function ({ name, description, socials }: Lume.Data) {
   const github = socials.find((item: any) => item.name === "GitHub");
 
   return (
-    <div className="min-h-screen flex flex-col justify-center text-center">
+    <>
       <hgroup>
         <h1 className="
           text-6xl
@@ -48,6 +48,6 @@ export default function ({ name, description, socials }: Lume.Data) {
           Explore Projects
         </a>
       </div>
-    </div>
+    </>
   );
 }
