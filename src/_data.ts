@@ -2,7 +2,7 @@ export const name = "Primefactor";
 export const domain = "https://primefactor.io";
 export const title = "Cryptography Research and Development Lab";
 export const description =
-  "Cryptography Research and Development Lab to explore what's possible tomorrow today.";
+  "Cryptography Research and Development Lab that explores what's possible tomorrow today.";
 
 export const openGraphLayout = "layouts/satori.tsx";
 
